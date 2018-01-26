@@ -12,7 +12,7 @@ Im Folgenden werden die Architektur und technische Umsetzung von mirr.OS one dok
 5. [Datenquellen](#datenquellen)
 6. [Datenbankanbindung](#datenbankanbindung)
 7. [Lokalisierung](#lokalisierung)
-8. [API](#api-1)
+8. [API](api)
 
 ## Begriffe
 * *Anzeige*: Grafische Darstellung auf dem Spiegel-Display als Webanwendung.
