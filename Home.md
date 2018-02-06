@@ -71,6 +71,7 @@ Verwendete Bibliotheken:
 		* [fakeweb](https://github.com/chrisk/fakeweb)
 	
 	* Parsing JSON/XML:
+                * [fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
 		* [feedparser](https://github.com/feedparser/feedparser)
 		* [happymapper](https://github.com/jnunemaker/happymapper)
 		* [feedjira](https://github.com/feedjira/feedjira)
