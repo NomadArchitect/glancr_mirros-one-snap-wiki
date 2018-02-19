@@ -96,8 +96,9 @@ Verwendete Bibliotheken:
 		* [whenever](https://github.com/javan/whenever)
 		
 	* API
-		* [(grape)](https://github.com/ruby-grape/grape)
-		
+	  * [(grape)](https://github.com/ruby-grape/grape)
+          * [(json-resource](http://jsonapi-resources.com)      
+
 	* CLI
 		* [thor](https://github.com/erikhuda/thor)
 		* [highline](https://github.com/JEG2/highline)
