@@ -119,6 +119,9 @@ Verwendete Bibliotheken:
 		* [bootsnap](https://github.com/Shopify/bootsnap)
 		* [rails-observers](https://github.com/rails/rails-observers)
 		* [state_machines](https://github.com/state-machines/state_machines)
+                * [rubyzip](https://github.com/rubyzip/rubyzip)
+                * [ruby-git](https://github.com/ruby-git/ruby-git)
+
 		
 Alternativen:
 
