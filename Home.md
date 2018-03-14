@@ -192,6 +192,12 @@ Hier sind einige grobe Ideen für Hard/Software-Features skizziert, die zukünft
 
 Es soll möglich sein, bestimmte "Modul-Scripts" einzubinden ohne dafür ein Modul-Slot zu belegen. Das Script wird ebenfalls alle XY Minuten aktualisiert hat aber keine Anzeige im Frontend.
 
+### Event- oder Zeitgesteuerte Module
+
+**Beispiel Eventgesteuert:** Benutzer beginnt mit seine App-Gesteuerten Zahnbürste seine Zähne zu putzen. Auf dem Spiegel wird entweder Modul XY mit dem *Zahnbürsten-Modul* ausgetauscht solange die *Putz-Session* aktiv ist.
+
+**Beispiel Zeitgesteurt:** Jeden Morgen ab 06:00 wird das ÖV-Modul dargestellt. Am Abend jeweils um 18:00 wird das ÖV-Modul mit dem TV-Programm-Modul ausgetauscht.
+
 ### Hotword Detection
 
 Mit [Snowboy](https://snowboy.kitt.ai) soll eine Hotword Detection implementiert werden, mit der bestimmte Aktionen (Scripts) ausgeführt werden können.
