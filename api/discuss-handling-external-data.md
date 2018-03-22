@@ -34,7 +34,7 @@ Zudem sind folgende Szenarien/Fehlerquellen zu beachten:
 
 #### Nachteile
 * Controller Bloat: Dort muss …
- 1. Ein switch entscheiden, ob alle oder nur die installierten Extensions geholt werden sollen
+ 1. Ein switch entscheiden, ob alle oder nur die installierten Extensions geholt werden sollen (Anforderungen 1 & 2)
  1. Falls alle, dann die verfügbaren Widgets abgerufen werden
  2. Merge und zusätzliches Attribut, was nun installiert ist und was nicht
  3. Check auf Kompatibilität von mirr.OS und Extension (aber nur für die externen)
