@@ -10,7 +10,8 @@ mirr.OS can dynamically (un)install extensions at runtime, which means that they
 
 #### Sources
 Source-type extensions provide the required logic to fetch data from an external data provider, e. g. Google Calendar. 
-A source extension must implement a number of hooks that are called by mirr.OS to trigger data refreshes, validate the user's credentials or fetch the available options – all calendars available for a Google account, for example.
+A source extension must implement a number of hooks that are called by mirr.OS to trigger data refreshes, validate the user's credentials or fetch the available options – all calendars available for a user's Google account, for example.
+Since the authentication process might be  Sources do *not* provide any display logic, only 
 
 #### Widgets
 Widgets – or rather, its instances – control how data is displayed on the frontend through a Vue.js component template. Widgets can also provide customizations for the display, e. g. whether to show or hide passed calendar events in a “Today” view. It's up to the widget developer which display customizations are offered. The mirr.OS settings app provides a drag'n'drop UI to place widget instances on the available screen.
