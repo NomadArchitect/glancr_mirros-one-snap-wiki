@@ -1,4 +1,4 @@
-# Kurzanleitung zurErstellung eines Widgets
+# Kurzanleitung zur Erstellung eines Widgets
 
 Zur Vorabinfo:
 - Datenquellen werden in Ruby geschrieben
