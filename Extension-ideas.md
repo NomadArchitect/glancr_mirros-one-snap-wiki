@@ -7,6 +7,34 @@ Hands-off, autoplaying/looping video. Focus on YouTube embeds. MVP should be abl
 ## Sport results
 Create a data source for sports results: Football results and basketball results. Migrate the two "modules" of v0.x.x and build two widgets.
 
-Scheme: date, league, league class, age group, gender, team, matchday, results, wins, draws, defeats, number of matches, goal difference, points, ranking (change to previous week)
+LIGA hat
+- Spielklasse
+- Altersklasse
+- Geschlecht
+- Anzahl der Plätze
+- Saison
 
-Schema: Datum, Liga, Spielklasse, Altersklasse, Geschlecht, Mannschaft, Spieltag, Ergebnisse, Siege, Unentschieden, Niederlagen, Anzahl d. Spiele, Tordifferenz,  Punkte, Platzierung (Änderung zur Vorwoche)
+MANNSCHAFT hat
+- Logo
+- Siege
+- Unentschieden
+- Niederlagen
+- Anzahl d. Spiele
+- Tordifferenz
+- Punkte
+- Platzierung
+- Platzierung Änderung zum letzten Messpunkt
+
+SPIELTAG hat
+- Nummer (also Zahl des Spieltages)
+- Ergebnisse der Begegnungen
+- Zeitstempel
+
+Jede LIGA hat n-MANNSCHAFTEN
+Jeder SPIELTAG hat n-SPIELE (MANNSCHAFTEN:2)
+Zu jedem SPIELTAG spielen MANNSCHAFTEN mit Ergebnissen
+
+Ziele:
+Ich will die Liga auswählen und dann entweder die Spielergebnisse der letzten Spiele (neueste zuerst) oder die Tabelle
+- Ergebnistabelle (wie im Modul)
+- Begegnung + Ergebnisse des aktuellen Spieltag
