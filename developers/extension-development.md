@@ -1,3 +1,8 @@
+**Overview**
+
+[[_TOC_]]
+
+
 ## Prerequisites
 
 Developing a mirr.OS extension is best done in a local environment where you have full debug access to all system parts. To get things running, you'll need:
@@ -64,7 +69,7 @@ Take the `public_transport_departures` widget as an example:
 
 ```
 
-## Scaffold a data source
+### Scaffolding a data source
 
 ```bash
 bin/rails generate source my_source_name
@@ -72,7 +77,7 @@ bin/rails generate source my_source_name
 
 In contrast to the widget before, the source `sbb` has some different files:
 
-```bash
+```
 ├── Gemfile
 ├── Gemfile.lock
 ├── MIT-LICENSE
@@ -109,7 +114,7 @@ In contrast to the widget before, the source `sbb` has some different files:
 
 mirr.OS needs to know about your newly created extension. The generator adds it to the API Gemfile, and we have some helper tasks to insert it into the development database.
 
-```bash
+```
 bin/rails extension:insert[widget, my_test_widget]
 # Inserted widget my_test_widget into the development database
 ```
@@ -128,7 +133,7 @@ Open up `<my_test_widget>.gemspec` in your extension's folder and edit the descr
 
 mirr.OS uses the gemspec specification `metdata` field a bit “creatively” which lets developers add localized metadata and specify how their extension integrates with others. To [keep the gemspec file valid](https://guides.rubygems.org/specification-reference/#metadata), all custom metadata is put in a JSON hash. You don't have to bother with this, just keep in mind that the metadata object has to be a valid Ruby hash.
 
-All fields have comments about their possible values, or how to add translations for your extension's description etc.
+All fields in the generated gemspec have comments about their possible values. You can delete those comments if you prefer
 
 ```ruby
 Gem::Specification.new do |s|
@@ -154,8 +159,12 @@ Gem::Specification.new do |s|
                         h: 2
                        }
                     ],
+                    # Add all languages for which your Vue templates are fully translated.
                     languages: [:enGb, :deDe, :esEs],
-                    group: nil
+                    # Add a group if your widget integrates with a specific data type.
+                    group: nil,
+                    # Prevents installing/updating widgets if the running mirr.OS version is below this.
+                    compatibility: '0.9.0'
                   }.to_json
                 }
 end
