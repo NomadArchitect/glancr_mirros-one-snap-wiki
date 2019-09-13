@@ -10,13 +10,13 @@ Developing a mirr.OS extension is best done in a local environment where you hav
 - [git](https://git-scm.com)
 - Ruby >= 2.5.3; preferably through version managers like [rbenv](https://github.com/rbenv/rbenv) or [asdf](https://asdf-vm.com/#/)
 - For Ruby < 2.6.0: rubygem [bundler](https://bundler.io) (`gem install bundle -v "1.17.3"`)
-- SQLite3: pre-installed on most UNIX-like systems, test with `sqlite3 --version`
+- MySQL >= 5.7 accepting connections on localhost
 - Node.js >= 10.15.0
 - Recommended: [Vue DevTools](https://github.com/vuejs/vue-devtools) extension for Chrome or Firefox, or the standalone Electron app
 
 ## Setting up and running mirr.OS components
 
-Just clone these repositories to your local machine and see their README files for setup and running instructions.
+Clone these repositories to your local machine and see their README files for setup and running instructions.
 
 - [Backend](https://gitlab.com/glancr/mirros_api)
 - [display app](https://gitlab.com/glancr/mirros_display)
@@ -30,14 +30,19 @@ Extension names can be any valid name that is not already taken by an existing e
 
 ### Scaffolding a widget
 
-In the folder where you've cloned the backend to, run:
+Open the folder where you've cloned the backend to on a command line, and run this comman:
 
 ```bash
-# in /some/path/to/mirros_api
-bin/rails generate widget my_test_widget
+# /some/path/to/mirros_api_repository
+bin/rails generate mirros_widget insert_your_widget_machine_name
 ```
 
-After you've run one the generator, you can find your widget's files in the `widgets` folder inside the `mirros_api` root.
+Valid names are lowercase letters, words separated by underscores. See [rubygems.org docs](https://guides.rubygems.org/name-your-gem/) on naming patterns.
+
+After you've run the generator, you can find your widget's files in the `widgets` folder of your mirros_api repository.
+
+
+## Folders and files of your extension
 
 Take the `public_transport_departures` widget as an example:
 
@@ -72,7 +77,7 @@ Take the `public_transport_departures` widget as an example:
 ### Scaffolding a data source
 
 ```bash
-bin/rails generate source my_source_name
+bin/rails generate mirros_source my_source_name
 ```
 
 In contrast to the widget before, the source `sbb` has some different files:
@@ -116,24 +121,39 @@ mirr.OS needs to know about your newly created extension. The generator adds it 
 
 ```
 bin/rails extension:insert[widget, my_test_widget]
-# Inserted widget my_test_widget into the development database
+# > Inserted widget my_test_widget into the development database
 ```
 
 This command reads the metadata from your extension's `gemspec` file and creates a new entry in the development database. It basically “installs” the extension.
 
-Now open the mirr.OS Settings app running at http://localhost:8080 (or 8081 if you started the Display app first), navigate to the “Widgets” or “Sources” tab and see your new extension in action:
+## Locating your extension in the UI
+
+If your dev servers are not running yet, check the README's of the API/Settings/Display repositories for instructions. The gist:
+
+```bash
+# in mirros_api repository
+rails s
+
+# in mirros_settings repository
+yarn serve
+
+# in mirros_display repository
+yarn serve
+```
+
+Now open the mirr.OS Settings app running at http://localhost:8080 (or 8081 if you started the Display app first), then navigate to the “Widgets” or “Sources” tab and see your new extension in action:
 
 ![Bildschirmfoto_2019-04-03_um_23.00.57](uploads/076d09a4875209c901ba293eaa010108/Bildschirmfoto_2019-04-03_um_23.00.57.png)
 
 ## Updating your extension's metadata
 
-Ok, the title and description could be improved …
+Ok, the title and description of our new extension could be improved …
 
-Open up `<my_test_widget>.gemspec` in your extension's folder and edit the description with a short sentence in English that explains what your extension does. **Attention: everything beyond 110 characters will be truncated in the UI!**
+Open up `<my_test_widget>.gemspec` in your extension's folder and edit the `s.description` with a short sentence in English that explains what your extension does. **Attention: everything beyond 110 characters will be truncated in the UI!**
 
 mirr.OS uses the gemspec specification `metdata` field a bit “creatively” which lets developers add localized metadata and specify how their extension integrates with others. To [keep the gemspec file valid](https://guides.rubygems.org/specification-reference/#metadata), all custom metadata is put in a JSON hash. You don't have to bother with this, just keep in mind that the metadata object has to be a valid Ruby hash.
 
-All fields in the generated gemspec have comments about their possible values. You can delete those comments if you prefer
+All fields in the generated gemspec have comments about their possible values. You can delete those comments if you prefer.
 
 ```ruby
 Gem::Specification.new do |s|
