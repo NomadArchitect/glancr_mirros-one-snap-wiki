@@ -8,8 +8,7 @@
 Developing a mirr.OS extension is best done in a local environment where you have full debug access to all system parts. To get things running, you'll need:
 
 - [git](https://git-scm.com)
-- Ruby >= 2.5.3; preferably through version managers like [rbenv](https://github.com/rbenv/rbenv) or [asdf](https://asdf-vm.com/#/)
-- For Ruby < 2.6.0: rubygem [bundler](https://bundler.io) (`gem install bundle -v "1.17.3"`)
+- Ruby >= 2.6.3; preferably through version managers like [rbenv](https://github.com/rbenv/rbenv) or [asdf](https://asdf-vm.com/#/)
 - MySQL >= 5.7 accepting connections on localhost
 - Node.js >= 10.15.0
 - Recommended: [Vue DevTools](https://github.com/vuejs/vue-devtools) extension for Chrome or Firefox, or the standalone Electron app
