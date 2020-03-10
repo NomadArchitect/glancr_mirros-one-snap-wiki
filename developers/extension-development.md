@@ -46,7 +46,7 @@ After you've run the generator, you can find your widget's files in the `widgets
 Take the `public_transport_departures` widget as an example:
 
 <details>
-<summary>expand</summary>
+<summary><b>expand code example</b></summary>
 
 ```bash
 ├── Gemfile
@@ -87,7 +87,7 @@ bin/rails generate mirros_source my_source_name
 In contrast to the widget before, the source `sbb` has some different files:
 
 <details>
-<summary>expand</summary>
+<summary><b>expand code example</b></summary>
 
 
 ```
