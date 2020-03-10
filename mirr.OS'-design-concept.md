@@ -26,24 +26,4 @@ If your widget is designed for a very specific use-case, e. g. you have a custom
 ### Groups
 Groups determine which sources and widgets are compatible in terms of the data type(s) they provide or consume.
 
-Each source that provides data for a group schema can be displayed by widgets that handle the same schema. Sources can provide multiple group schemas, but widgets are constrained to one schema to keep the UI clear and the data model more manageable [^1].
-
-
-
-## mirr.OS one components
-mirr.OS one is comprised of several individual components. 
-
-### Backend / API
-The backend is implemented as an API-only Ruby on Rails app. Setup instructions for development are [in the repository](https://gitlab.com/glancr/mirrOS_api). The API backend is the central hub that stores management data, settings etc. and triggers data fetching through individual sources. It provides resourceful endpoints for all data structures, plus a handful of utility endpoints e. g. for fetching frontend templates. The RESTful endpoints adhere to the [JSON:API 1.0 specification](https://jsonapi.org/specification), so other API clients can interact with the backend in a standardized way.
-
-### Management app
-Implemented as a JavaScript single-page application with Vue.js. Due to the highly interconnected data model of mirr.OS resources, most state is kept in a central Vuex store. Setup instructions for development are [in the repository](glancr/mirrOS_settings).
-
-### Display app
-**TODO**
-
-### Extensions
-Extension for mirr.OS are packaged as Ruby gems.
-
-
-[^1]: This may change in future versions.
+Each source that provides data for a group schema can be displayed by widgets that handle the same schema. Sources can provide multiple group schemas, but widgets are constrained to one schema to keep the UI clear and the data model more manageable (though this may change in future versions).
