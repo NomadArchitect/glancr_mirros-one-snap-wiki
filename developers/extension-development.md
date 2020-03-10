@@ -45,6 +45,9 @@ After you've run the generator, you can find your widget's files in the `widgets
 
 Take the `public_transport_departures` widget as an example:
 
+<details>
+<summary>expand</summary>
+
 ```bash
 ├── Gemfile
 ├── Gemfile.lock
@@ -73,6 +76,8 @@ Take the `public_transport_departures` widget as an example:
 
 ```
 
+</details>
+
 ### Scaffolding a data source
 
 ```bash
@@ -80,6 +85,10 @@ bin/rails generate mirros_source my_source_name
 ```
 
 In contrast to the widget before, the source `sbb` has some different files:
+
+<details>
+<summary>expand</summary>
+
 
 ```
 ├── Gemfile
@@ -113,6 +122,7 @@ In contrast to the widget before, the source `sbb` has some different files:
 └── test
     ├── [... test files]
 ```
+</details>
 
 ## Getting your extension into the database
 
