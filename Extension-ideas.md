@@ -34,10 +34,3 @@ Ziele:
 Ich will die Liga auswählen und dann entweder die Spielergebnisse der letzten Spiele (neueste zuerst) oder die Tabelle
 - Ergebnistabelle (wie im Modul)
 - Begegnung + Ergebnisse des aktuellen Spieltag
-
-## Traffic incident / route information
-Data sources for Bing Maps + [TomTom Traffic API](https://developer.tomtom.com/traffic-api)
-* Parent model: Chosen route (start/end), possibly a title
-* Child model: 0-n incidents along this route, cf. old traffic module for fields
-
-Widget to display active incidents along the chosen route
