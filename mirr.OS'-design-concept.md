@@ -6,7 +6,9 @@ Throughout this guide, we'll use calendar data as a practical example to explain
 “Extension” is the umbrella term for widgets and sources. mirr.OS one is designed to provide flexible integration of different sources and widgets through a common data schema (see [Groups](#groups)).
 Both extension types can be instantiated, i. e. a user can create multiple instances of each widget or source with different settings. For sources, this means they can add multiple accounts for the same data provider – different Google accounts for home and work, for example. Instances of a widget provide the same base view of the data, e. g. a view of today's events, but one can be configured to show calendar data from the home Google account while the other displays work data.
 
-mirr.OS can dynamically (un)install extensions at runtime, which means that they can be distributed independently from mirr.OS core updates. Extensions are packaged as Ruby gems and must follow the application structure of a Rails engine. The glancr team runs a gem server to distribute extensions, but the mirr.OS backend can be configured to use other gem sources.
+mirr.OS can dynamically (un)install extensions at runtime, which means that they can be distributed independently from mirr.OS core updates. To ensure all dependencies are installed and loaded, this requires a full bundler run and a backend restart – not very performant, so the shipped extensions are just toggled on/off.
+
+Extensions are packaged as Ruby gems and must follow the application structure of a Rails engine. The glancr team runs a gem server to distribute extensions, but the mirr.OS backend can be configured to use other gem sources.
 
 #### Sources
 Source-type extensions provide the required logic to fetch data from an external data provider, e. g. Google Calendar. 
