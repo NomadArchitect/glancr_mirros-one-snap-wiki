@@ -33,18 +33,17 @@ Clone these repositories to your local machine and see their README files for se
 
 To ease the grunt work and help you understand mirr.OS extension conventions, we have Rails generators for both widgets and sources. This is often referred to as “scaffolding”.
 
-Extension names can be any valid name that is not already taken by an existing extension. Valid names consist of latin characters and underscore. It is a Ruby convention to use snake_case for gem names, and mirr.OS extensions are distributed as gems. So please adhere to this naming scheme to avoid naming confusion.
+Extension names can be any valid name that is not already taken by an existing extension. Valid names consist of latin characters and underscore. As mirr.OS extensions are essentially Ruby gems, we stick to the Ruby convention to use snake_case, e.g. `my_cool_widget`. Proper naming has a lot of advantages, like proper automatic class naming and loading.
 
 ### Scaffolding a widget
 
-Open the folder where you've cloned the backend to on a command line, and run this comman:
+Open the folder where you've cloned the backend to on a command line, and run this command:
 
 ```bash
-# /some/path/to/mirros_api_repository
-bin/rails generate mirros_widget insert_your_widget_machine_name
+bin/rails generate mirros_widget your_widget_name
 ```
 
-Valid names are lowercase letters, words separated by underscores. See [rubygems.org docs](https://guides.rubygems.org/name-your-gem/) on naming patterns.
+Valid names are lowercase latin letters, words separated by underscores. See [rubygems.org docs](https://guides.rubygems.org/name-your-gem/) on naming patterns.
 
 After you've run the generator, you can find your widget's files in the `widgets` folder of your mirros_api repository.
 
@@ -64,20 +63,20 @@ Take the `public_transport_departures` widget as an example:
 ├── Rakefile
 ├── app
 │   └── assets
-│       ├── icons # dummy icon, replace with an SVG
-│       │   └── public_transport_departures.svg
-│       └── templates # Templates for the UI apps
+│       ├── icons
+│       │   └── public_transport_departures.svg # dummy icon, replace with an SVG
+│       └── templates # Templates for the settings/display apps
 │           ├── display.vue
 │           └── settings.vue
 ├── bin
-│   └── rails
+│   └── rails # for running rails commands within your extension (advanced)
 ├── config
-│   └── routes.rb # custom routing, if required
+│   └── routes.rb # custom routing (advanced)
 ├── lib
 │   ├── public_transport_departures
-│   │   ├── engine.rb
-│   │   └── version.rb # current version
-│   └── public_transport_departures.rb
+│   │   ├── engine.rb # tells Rails how to load your extension
+│   │   └── version.rb # current version of your extension
+│   └── public_transport_departures.rb # main class
 ├── public_transport_departures.gemspec # metadata and dependencies
 └── test
     ├── [... test files]
@@ -92,53 +91,44 @@ Take the `public_transport_departures` widget as an example:
 bin/rails generate mirros_source my_source_name
 ```
 
-In contrast to the widget before, the source `sbb` has some different files:
+In contrast to the widget before, the source `sbb` has some different files – just highlighting the differences here:
 
 <details>
 <summary><b>expand code example</b></summary>
 
 
 ```
-├── Gemfile
-├── Gemfile.lock
-├── MIT-LICENSE
-├── README.md
-├── Rakefile
 ├── app
 │   ├── assets
-│   │   ├── icons
-│   │   │   └── sbb.svg
 │   │   └── templates
 │   │       └── settings.vue # only settings form required
 │   └── models
 │       └── sbb
 │           ├── application_record.rb
 │           └── public_transport.rb # Inherits GroupSchemas model
-├── bin
-│   └── rails
-├── config
-│   └── routes.rb
 ├── db
-│   └── migrate
+│   └── migrate # Custom migrations (very advanced)
 ├── lib
-│   ├── sbb
-│   │   ├── engine.rb
-│   │   └── version.rb
-│   └── sbb.rb
-    # Contains Hooks class which implements methods for data refresh
-├── sbb.gemspec
-└── test
-    ├── [... test files]
+│   └── sbb.rb     # Hooks class implements methods for data fetching
 ```
 </details>
 
 ## Getting your extension into the database
 
-mirr.OS needs to know about your newly created extension. The generator adds it to the API Gemfile, and we have some helper tasks to insert it into the development database.
+mirr.OS needs to know about your newly created extension. The generator adds it to the API Gemfile, and the backend ships helper tasks to insert it into the development database.
 
-```
+For a new widget named `my_test_widget`, run: 
+
+```bash
 bin/rails extension:insert[widget, my_test_widget]
 # > Inserted widget my_test_widget into the development database
+```
+
+And for a new source named `my_test_source`: 
+
+```bash
+bin/rails extension:insert[source, my_test_source]
+# > Inserted source my_test_source into the development database
 ```
 
 This command reads the metadata from your extension's `gemspec` file and creates a new entry in the development database. It basically “installs” the extension.
@@ -166,9 +156,9 @@ Now open the mirr.OS Settings app running at http://localhost:8080 (or 8081 if y
 
 Ok, the title and description of our new extension could be improved …
 
-Open up `<my_test_widget>.gemspec` in your extension's folder and edit the `s.description` with a short sentence in English that explains what your extension does. **Attention: everything beyond 110 characters will be truncated in the UI!**
+Open up `my_test_widget.gemspec` in your extension's folder and edit the `s.description` with a short sentence in English that explains what your extension does. **Note: everything beyond 110 characters will be truncated in the UI!**
 
-mirr.OS uses the gemspec specification `metdata` field a bit “creatively” which lets developers add localized metadata and specify how their extension integrates with others. To [keep the gemspec file valid](https://guides.rubygems.org/specification-reference/#metadata), all custom metadata is put in a JSON hash. You don't have to bother with this, just keep in mind that the metadata object has to be a valid Ruby hash.
+mirr.OS uses the gemspec specification `metdata` field a bit “creatively” which lets developers add localized metadata and specify how their extension integrates with others. To [keep the gemspec file valid](https://guides.rubygems.org/specification-reference/#metadata), all custom metadata is put in a hash. Just keep in mind that the metadata object has to be a valid Ruby hash.
 
 All fields in the generated gemspec have comments about their possible values. You can delete those comments if you prefer.
 
