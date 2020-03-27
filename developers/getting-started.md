@@ -128,6 +128,8 @@ bin/rails extension:insert[source, my_test_source]
 
 This command reads the metadata from your extension's `gemspec` file and creates a new entry in the development database. It basically “installs” the extension.
 
+**To ensure there's no stale cache, restart your Rails server if it's already running.**
+
 ## Locating your extension in the UI
 
 If your dev servers are not running yet, check the README's of the API/Settings/Display repositories for instructions. 
