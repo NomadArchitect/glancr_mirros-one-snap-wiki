@@ -150,7 +150,7 @@ yarn serve
 
 Now open the mirr.OS Settings app running at http://localhost:8080 (or 8081 if you started the Display app first), then navigate to the “Widgets” or “Sources” tab and see your new extension in action:
 
-![Bildschirmfoto_2019-04-03_um_23.00.57](uploads/076d09a4875209c901ba293eaa010108/Bildschirmfoto_2019-04-03_um_23.00.57.png)
+<img src="uploads/076d09a4875209c901ba293eaa010108/Bildschirmfoto_2019-04-03_um_23.00.57.png" width="400" loading="lazy" />
 
 ## Updating your extension's metadata
 
@@ -164,6 +164,7 @@ All fields in the generated gemspec have comments about their possible values. Y
 
 <details>
 <summary>Expand code example</summary>
+
 ```ruby
 Gem::Specification.new do |s|
   s.name        = "my_test_widget"
@@ -198,6 +199,7 @@ Gem::Specification.new do |s|
                 }
 end
 ```
+
 </details>
 
 Once you're happy with the metadata, you need to update the database entry with:
@@ -206,4 +208,5 @@ Once you're happy with the metadata, you need to update the database entry with:
 bin/rails extension:update[widget, my_test_widget]
 ```
 Much better!
-![Bildschirmfoto_2019-04-03_um_23.20.43](uploads/12bca806cb19e1bc2c3374e543b8c73d/Bildschirmfoto_2019-04-03_um_23.20.43.png)
+
+<img src="uploads/12bca806cb19e1bc2c3374e543b8c73d/Bildschirmfoto_2019-04-03_um_23.20.43.png" width="400" loading="lazy" />
