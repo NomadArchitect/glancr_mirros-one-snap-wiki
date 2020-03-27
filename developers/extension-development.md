@@ -162,6 +162,8 @@ mirr.OS uses the gemspec specification `metdata` field a bit “creatively” wh
 
 All fields in the generated gemspec have comments about their possible values. You can delete those comments if you prefer.
 
+<details>
+<summary>Expand code example</summary>
 ```ruby
 Gem::Specification.new do |s|
   s.name        = "my_test_widget"
@@ -196,6 +198,7 @@ Gem::Specification.new do |s|
                 }
 end
 ```
+</details>
 
 Once you're happy with the metadata, you need to update the database entry with:
 
