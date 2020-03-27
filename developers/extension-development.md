@@ -2,8 +2,16 @@
 
 [[_TOC_]]
 
-
 ## Prerequisites
+
+The mirr.OS API backend is a Ruby on Rails app. Both the Settings and Display apps are built with Vue.js. As an extension developer, you should get comfortable with
+1. cloning repositories with git
+2. running a few commands on the command line (copy&paste from this tutorial)
+3. [Vue.js](https://vuejs.org/v2/guide/) basics
+4. filling in metadata for your extension in a Ruby file
+
+Sounds feasible, right? :smiley:
+
 
 Developing a mirr.OS extension is best done in a local environment where you have full debug access to all system parts. To get things running, you'll need:
 
