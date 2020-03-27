@@ -1,5 +1,3 @@
-**Overview**
-
 [[_TOC_]]
 
 ## Prerequisites
@@ -47,12 +45,7 @@ bin/rails generate mirros_widget your_widget_name
 
 Valid names are lowercase latin letters, words separated by underscores. See [rubygems.org docs](https://guides.rubygems.org/name-your-gem/) on naming patterns.
 
-After you've run the generator, you can find your widget's files in the `widgets` folder of your mirros_api repository.
-
-
-## Folders and files of your extension
-
-Take the `public_transport_departures` widget as an example:
+After you've run the generator, you can find your widget's files in the `widgets` folder of your mirros_api repository. Take the `public_transport_departures` widget as an example:
 
 <details>
 <summary><b>expand code example</b></summary>
@@ -137,7 +130,10 @@ This command reads the metadata from your extension's `gemspec` file and creates
 
 ## Locating your extension in the UI
 
-If your dev servers are not running yet, check the README's of the API/Settings/Display repositories for instructions. The gist:
+If your dev servers are not running yet, check the README's of the API/Settings/Display repositories for instructions. 
+
+<details>
+<summary><b>The gist</b></summary>
 
 ```bash
 # in mirros_api repository
@@ -149,6 +145,8 @@ yarn serve
 # in mirros_display repository
 yarn serve
 ```
+
+</details>
 
 Now open the mirr.OS Settings app running at http://localhost:8080 (or 8081 if you started the Display app first), then navigate to the “Widgets” or “Sources” tab and see your new extension in action:
 
@@ -165,7 +163,7 @@ mirr.OS uses the gemspec specification `metdata` field a bit “creatively” wh
 All fields in the generated gemspec have comments about their possible values. You can delete those comments if you prefer.
 
 <details>
-<summary>Expand code example</summary>
+<summary><b>Expand code example</b></summary>
 
 ```ruby
 Gem::Specification.new do |s|
