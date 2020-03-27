@@ -10,16 +10,18 @@ The mirr.OS API backend is a Ruby on Rails app. Both the Settings and Display ap
 3. [Vue.js](https://vuejs.org/v2/guide/) basics
 4. filling in metadata for your extension in a Ruby file
 
-Sounds feasible, right? :smiley:
+Sounds feasible, right? :tada: 
 
 
-Developing a mirr.OS extension is best done in a local environment where you have full debug access to all system parts. To get things running, you'll need:
+Developing a mirr.OS extension is best done in a local environment where you have full debug access to all system parts. To get things running, you'll need the following:
 
 - [git](https://git-scm.com)
-- Ruby >= 2.6.3; preferably through version managers like [rbenv](https://github.com/rbenv/rbenv) or [asdf](https://asdf-vm.com/#/)
+- Ruby >= 2.6.3
 - MySQL >= 5.7 accepting connections on localhost
-- Node.js >= 10.15.0
+- [Node.js](https://nodejs.org/en/) >= 10.15.0
 - Recommended: [Vue DevTools](https://github.com/vuejs/vue-devtools) extension for Chrome or Firefox, or the standalone Electron app
+
+Apart from the Vue DevTools, we recommend to install these through version managers like [asdf](https://asdf-vm.com/#/) and package managers like [Homebrew](https://brew.sh) (macOS/Linux) or [Chocolatey](https://chocolatey.org) on Windows.
 
 ## Setting up and running mirr.OS components
 
