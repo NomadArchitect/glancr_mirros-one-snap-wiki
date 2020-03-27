@@ -15,7 +15,7 @@ Developing a mirr.OS extension is best done in a local environment where you hav
 
 - [git](https://git-scm.com)
 - Ruby >= 2.6.3
-- MySQL >= 5.7 accepting connections on localhost
+- MySQL >= 5.7 (see API setup instructions for configuration)
 - [Node.js](https://nodejs.org/en/) >= 10.15.0
 - Recommended: [Vue DevTools](https://github.com/vuejs/vue-devtools) extension for Chrome or Firefox, or the standalone Electron app
 
@@ -23,7 +23,7 @@ Apart from the Vue DevTools, we recommend to install these through version manag
 
 ## Setting up and running mirr.OS components
 
-Clone these repositories to your local machine and see their README files for setup and running instructions.
+Clone these repositories to your local machine and see their README files for setup and running instructions. **Please use the master branch since it holds the latest stable version.** You can of course check out the latest and greatest in other branches, but before reaching out to us please test on master.
 
 - [Backend](https://gitlab.com/glancr/mirros_api)
 - [display app](https://gitlab.com/glancr/mirros_display)
@@ -39,7 +39,7 @@ Extension names can be any valid name that is not already taken by an existing e
 
 Open the folder where you've cloned the backend to on a command line, and run this command:
 
-```bash
+```shell
 bin/rails generate mirros_widget your_widget_name
 ```
 
@@ -50,7 +50,7 @@ After you've run the generator, you can find your widget's files in the `widgets
 <details>
 <summary><b>expand code example</b></summary>
 
-```bash
+```shell
 ├── Gemfile
 ├── Gemfile.lock
 ├── MIT-LICENSE
@@ -82,7 +82,7 @@ After you've run the generator, you can find your widget's files in the `widgets
 
 ### Scaffolding a data source
 
-```bash
+```shell
 bin/rails generate mirros_source my_source_name
 ```
 
@@ -114,14 +114,14 @@ mirr.OS needs to know about your newly created extension. The generator adds it 
 
 For a new widget named `my_test_widget`, run: 
 
-```bash
+```shell
 bin/rails extension:insert[widget, my_test_widget]
 # > Inserted widget my_test_widget into the development database
 ```
 
 And for a new source named `my_test_source`: 
 
-```bash
+```shell
 bin/rails extension:insert[source, my_test_source]
 # > Inserted source my_test_source into the development database
 ```
@@ -135,7 +135,7 @@ If your dev servers are not running yet, check the README's of the API/Settings/
 <details>
 <summary><b>The gist</b></summary>
 
-```bash
+```shell
 # in mirros_api repository
 rails s
 
@@ -204,7 +204,7 @@ end
 
 Once you're happy with the metadata, you need to update the database entry with:
 
-```bash
+```shell
 bin/rails extension:update[widget, my_test_widget]
 ```
 Much better!
