@@ -6,7 +6,5 @@ The impatient developer can go straight to [our step-by-step guide](developers/1
 2. How to scaffold your first mirr.OS extension
 3. How to integrate with mirr.OS core
 
-Die Schritt-für-Schritt-Anleitung zum Setup und Entwickeln ist [auch auf Deutsch verfügbar](developers/Erweiterungen-entwickeln).
-
 ## In-depth: mirr.OS concepts explained
 Curious about the inner workings of mirr.OS? We also have a [writeup on the main concepts and design considerations](mirr.OS'-design-concept).
