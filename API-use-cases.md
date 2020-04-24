@@ -9,7 +9,7 @@ First you need to know the board ID. The board ID starts at "1" and is counted u
 
 If you want to get all board IDs before, you can do this with the following command:
 
-' curl "http://glancr.local/api/boards?fields[boards]=id" '
+` curl "http://glancr.local/api/boards?fields[boards]=id" `
 
 The command to control the boards would be
 
