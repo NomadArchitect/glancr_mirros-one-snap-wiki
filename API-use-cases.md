@@ -1,4 +1,4 @@
-You can control mirr.OS via JSON-API REST calls.
+You can control mirr.OS **one** via JSON-API REST calls.
 
 [[_TOC_]]
 
@@ -27,7 +27,7 @@ curl -X "PATCH" "http://glancr.local/api/settings/system_activeboard" \
 }'
 ```
 
-# Call system commands for mirr.OS one externally
+# Call system commands externally
 
 In mirr.OS one we have under Help some buttons that allow you to reboot the system etc. without having to open a terminal:
 
