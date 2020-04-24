@@ -3,7 +3,7 @@ You can control mirr.OS **one** via JSON-API REST calls.
 [[_TOC_]]
 
 # External control of multiboards
-** Use case: you have created several boards and want to control which board is displayed via an external service. **
+**Use case:** you have created several boards and want to control which board is displayed via an external service.
 
 First you need to know the board ID. The board ID starts at "1" and is counted up. So the second board has the ID "2" and so on. If a board is deleted, the ID is not assigned again, but the count is continued.
 
