@@ -1,4 +1,4 @@
-You can control mirr.OS **one** via JSON-API REST calls.
+You can control mirr.OS **one** via JSON-API REST calls. In the examples we use _glancr.local_. In case your system does not support bonjour/zeroconf/mDNS, you will need to use the local IP address.
 
 [[_TOC_]]
 
@@ -11,7 +11,7 @@ If you want to get all board IDs before, you can do this with the following comm
 
 ` curl "http://glancr.local/api/boards?fields[boards]=id" `
 
-The command to control the boards would be
+The command to set the active board would be
 
 ```
 curl -X "PATCH" "http://glancr.local/api/settings/system_activeboard" \
@@ -29,17 +29,17 @@ curl -X "PATCH" "http://glancr.local/api/settings/system_activeboard" \
 
 # Call system commands externally
 
-In mirr.OS one we have under Help some buttons that allow you to reboot the system etc. without having to open a terminal:
+In mirr.OS one we have some buttons that allow you to reboot the system etc. without having to open a terminal:
 
 - **reload** restarts the browser
 - **restart** boots completely through
 - **reset** deletes the settings
-- **Shut down** and turn off the system
+- **shut down** and turn off the system
 
 If you want to use external services to trigger these and other commands on a regular basis, you can do so as follows.
 
-` curl "http://192.168.XXX.XXX/api/system/reload_browser" `
+` curl "http://glancr.local/api/system/reload_browser" `
 
-You can also call other commands like this. See [routes.rb](https://gitlab.com/glancr/mirros_api/-/blob/develop/config/routes.rb) from line 52 "_Non-resourceful routes for controlling the system_"
+You can also call other commands like this. See [routes.rb](https://gitlab.com/glancr/mirros_api/-/blob/develop/config/routes.rb#52) "_Non-resourceful routes for controlling the system_"
 
 
