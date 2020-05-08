@@ -34,3 +34,19 @@ Ziele:
 Ich will die Liga auswählen und dann entweder die Spielergebnisse der letzten Spiele (neueste zuerst) oder die Tabelle
 - Ergebnistabelle (wie im Modul)
 - Begegnung + Ergebnisse des aktuellen Spieltag
+
+
+## Smart Home
+
+### Schema
+* Device name
+* Current status / last value (on/off, xx,x W consumption, …)
+
+### Widget
+* Display smart home device status / value from connected sources
+  * Tabular layout
+  * Choose from a set of generic icons
+
+### Sources
+Requested by: [(1)](https://gitlab.com/glancr/mirros-one-snap/-/issues/423#note_338445177)
+* SMA (photovoltaic manufacturer): [iOS app](https://www.heiko-pruessing.de/projects/energymeterapp/#links) by an SMA employee seems to use “energy meter” APIs via UDP Multicast to get basic information. No authentication necessary.
