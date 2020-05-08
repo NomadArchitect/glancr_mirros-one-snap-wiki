@@ -39,8 +39,10 @@ Ich will die Liga auswählen und dann entweder die Spielergebnisse der letzten S
 ## Smart Home
 
 ### Schema
-* Device name
-* Current status / last value (on/off, xx,x W consumption, …)
+* `String` Device name
+* `String` Current status / last value (on/off, xx,x W consumption, …)
+
+**How should we handle devices that offer > 1 value, but don't fit other schemas like `current_weather`?** 
 
 ### Widget
 * Display smart home device status / value from connected sources
