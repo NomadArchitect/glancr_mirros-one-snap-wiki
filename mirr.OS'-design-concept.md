@@ -1,5 +1,9 @@
 ## Key concepts
 
+mirr.OS is built with modularity in mind, as a completely decoupled web application stack. This way, the display and settings apps can be replaced or augmented for specialized use cases. All three parts can be extended to add functionality in defined ways.
+
+![glancr_architecture.002](uploads/7d4395132e3bafd0f90e8ba24637497d/glancr_architecture.002.jpeg)
+
 Throughout this guide, we'll use calendar data as a practical example to explain mirr.OS concepts and data structures. Not only are calendars the data type most used and requested by mirr.OS users, but they bring a quite complex data model and edge cases that drove design decisions for mirr.OS. We'll use Google Calendar in the examples since it's the most popular web calendaring solution.
 
 ### Extensions
@@ -20,6 +24,8 @@ Widgets – or rather, its instances – control how data is displayed on the fr
 
 ##### Integrated vs. stand-alone widgets
 As a widget developer, you can decide whether you want to integrate your widget with data sources from other extensions or not. 
+
+![glancr_architecture.003](uploads/ae2ece2c2f5f8bb71feaeb3f5c570fd3/glancr_architecture.003.jpeg)
 
 In the first case, you only need to specify the group schemas that your widget can handle (see [Groups](#groups)). When a user configures an instance of your widget, mirr.OS will automatically show all compatible sources that are installed on the user's system. Once the user chooses sources to display through your widget, the data is passed to your widget's frontend template in the specified group schema.
 
