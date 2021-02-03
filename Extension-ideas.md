@@ -8,27 +8,43 @@ LIGA hat
 - Altersklasse
 - Geschlecht
 - Anzahl der Plätze
-- Saison
+- Saison (ID + name)
+- Verband (ID + name)
+- Bezirk (ID + name)
+- Kreis (ID + name)
 
 MANNSCHAFT hat
+- Verein (ID + name + kurzname)
 - Logo
-- Siege
-- Unentschieden
-- Niederlagen
-- Anzahl d. Spiele
-- Tordifferenz
+- Anzahl Siege
+- Anzahl Unentschieden
+- Anzahl Niederlagen
+- Anzahl Spiele
+- Anzahl Tore/Körbe
+- Anzahl Gegentore/Gegenkörbe
+- Tordifferenz/Korbdifferenz
 - Punkte
 - Platzierung
 - Platzierung Änderung zum letzten Messpunkt
 
 SPIELTAG hat
 - Nummer (also Zahl des Spieltages)
-- Ergebnisse der Begegnungen
 - Zeitstempel
 
-Jede LIGA hat n-MANNSCHAFTEN
-Jeder SPIELTAG hat n-SPIELE (MANNSCHAFTEN:2)
-Zu jedem SPIELTAG spielen MANNSCHAFTEN mit Ergebnissen
+BEGEGNUNG hat
+- Heimmannschaft (Refernz auf Mannschaft)
+- Gastmannschaft (Refernz auf Mannschaft)
+- Spielnummer
+- Timestamp für Kickoff
+- Endergebnis
+- Abgesagt? (Durch Leitung abgesagt)
+- Verzicht? (Rückzug einer Mannschaft)
+
+Beziehungen der Tabellen:
+- Jede LIGA hat n-MANNSCHAFTEN und m-SPIELTAGE
+- Jeder SPIELTAG hat n-BEGENGUNGEN
+- Jede Begegnung hat 2-MANNSCHAFTEN
+- Zu jedem SPIELTAG spielen 2 MANNSCHAFTEN mit Ergebnissen
 
 Ziele:
 Ich will die Liga auswählen und dann entweder die Spielergebnisse der letzten Spiele (neueste zuerst) oder die Tabelle
