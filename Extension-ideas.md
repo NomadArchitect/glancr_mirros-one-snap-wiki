@@ -5,13 +5,9 @@ Create a data source for sports results: Football results and basketball results
 
 LIGA hat
 - Spielklasse
-- Altersklasse
 - Geschlecht
-- Anzahl der Plätze
 - Saison (ID + name)
 - Verband (ID + name)
-- Bezirk (ID + name)
-- Kreis (ID + name)
 
 MANNSCHAFT hat
 - Verein (ID + name + kurzname)
@@ -22,10 +18,8 @@ MANNSCHAFT hat
 - Anzahl Spiele
 - Anzahl Tore/Körbe
 - Anzahl Gegentore/Gegenkörbe
-- Tordifferenz/Korbdifferenz
 - Punkte
 - Platzierung
-- Platzierung Änderung zum letzten Messpunkt
 
 SPIELTAG hat
 - Nummer (also Zahl des Spieltages)
@@ -34,11 +28,8 @@ SPIELTAG hat
 BEGEGNUNG hat
 - Heimmannschaft (Refernz auf Mannschaft)
 - Gastmannschaft (Refernz auf Mannschaft)
-- Spielnummer
 - Timestamp für Kickoff
 - Endergebnis
-- Abgesagt? (Durch Leitung abgesagt)
-- Verzicht? (Rückzug einer Mannschaft)
 
 Beziehungen der Tabellen:
 - Jede LIGA hat n-MANNSCHAFTEN und m-SPIELTAGE
